@@ -4,5 +4,7 @@ public interface Drawer {
 
 	public void draw();
 
-	void draw(int count, float rot);
+	void draw(float r);
+
+	void rotateSquare(int count, float rot);
 }

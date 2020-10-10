@@ -2,7 +2,7 @@ package view;
 
 import processing.core.PApplet;
 
-public class Circle extends Element implements Drawer{
+public class Circle extends Element {
 
 	
 	public Circle(int x, int y, float radius, PApplet app) {
@@ -13,22 +13,16 @@ public class Circle extends Element implements Drawer{
 
 
 
-	public void draw() {
-		// TODO Auto-generated method stub
-		 app.rectMode(app.CENTER);
-		 app.ellipse(x, y, radius, radius);
-		  if(radius > 2) {
-		    radius *= 0.75f;
-		    draw();
+	public void draw(float r) {
+		 app.ellipse(this.x, this.y, r, r);
+		  if(r > 2) {
+		    r *= 0.75f;
+		    
+		    draw(r);
 		  }
 	}
 
 
 
 
-	@Override
-	public void draw(int count, float rot) {
-		// TODO Auto-generated method stub
-		
-	}
 }
