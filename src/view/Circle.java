@@ -13,13 +13,22 @@ public class Circle extends Element {
 
 
 
-	public void draw(float r) {
-		 app.ellipse(this.x, this.y, r, r);
-		  if(r > 2) {
-		    r *= 0.75f;
+	public void draw() {
+		 app.ellipse(this.x, this.y,radius, radius);
+		  if(radius > 2) {
+			  radius *= 0.75f;
 		    
-		    draw(r);
+		    draw();
 		  }
+	}
+
+
+
+
+	@Override
+	public void rotateSquare(int count, float rot) {
+		// TODO Auto-generated method stub
+		
 	}
 
 

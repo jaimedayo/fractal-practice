@@ -22,8 +22,8 @@ Rectangle r;
 
 	public void setup() {
 	start=false;
-	c=new Circle(0,0,100, this);
-	r=new Rectangle(0,0,100,this);
+	
+	
 	}
 
 	public void draw() {
@@ -32,16 +32,16 @@ Rectangle r;
 		translate(300, 300);
 		background(255);
 		escala =20+ mouseY;
-		rot= (mouseY/ 60)+1;
+		rot= (mouseY/ 30)+1;
 		
 		if(start) {
 			 rectMode(CENTER);
 		//dibujar cuadrado o rectangulo
 		if(type){
-			r.draw(escala);
+rectangle(0, 0, escala, 0, rot);
 		
 		}if(type==false) {
-			c.draw(escala);
+			circle(0, 0, escala);
 		}
 		}
 		
@@ -68,14 +68,14 @@ if(mouseX>= 20 && mouseX<=100 && mouseY>= 90 && mouseY<=120){
 	}
 
 	public void circle(int x, int y, float radius) {
-		rectMode(CENTER);
 		
-	
+		c=new Circle(x,y,radius, this);
+		c.draw();
 			  
 			}
 	public void rectangle(int x, int y, float radius, int count,float rot) {
-		  rectMode(CENTER);
-			r=new Rectangle(x,y,radius, null);
+		 
+		  r=new Rectangle(x,y,radius,this);
 		   r.draw();
 		   r.rotateSquare(count, rot);
 		}

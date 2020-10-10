@@ -10,12 +10,12 @@ public class Rectangle extends Element implements Drawer{
 	}
 	
 
-	public  void draw(float r) {
+	public  void draw() {
 		 
-		 app.rect(x, y, r, r);
-		  if(r > 2) {
-		    r *= 0.75f;
-		    draw(r);
+		 app.rect(x, y, radius, radius);
+		  if(radius > 2) {
+		    radius *= 0.75f;
+		//    draw();
 		  }
 		}
 
@@ -24,9 +24,7 @@ public class Rectangle extends Element implements Drawer{
 	public void rotateSquare(int count,float rot) {
 		// TODO Auto-generated method stub
 
-		 
 		    if(count%2==0) {
-		    
 		    app.rotate(rot*15);
 		   draw();
 		    app.rotate(rot*-15);
